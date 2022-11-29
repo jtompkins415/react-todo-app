@@ -1,9 +1,11 @@
 import React from "react";
 
-const Todo = ({id, todo}) => {
+const Todo = ({id, todo='default todo'}) => {
     return (
         <div>
-            {todo}
+            <ul>
+            <li>{todo}</li>
+            </ul>
         </div>
     )
 }
