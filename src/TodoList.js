@@ -8,12 +8,16 @@ const TodoList = () => {
         setTodos(todos => [...todos, newTodo])
     }
 
+    const removeTodo = (id) => {
+        setTodos(todos => todos.filter(todo => todo.id !== id))
+    }
+
     return(
         <div>
             <h1>To Do List</h1>
             <NewTodoForm addTodo={addTodo} />
             <div>
-                {todos.map(({id, todo}) => <Todo id={id} todo={todo} key={id}/> )}
+                {todos.map(({id, todo}) => <Todo remove={removeTodo} id={id} todo={todo} key={id}/> )}
             </div>
         </div>
     )
